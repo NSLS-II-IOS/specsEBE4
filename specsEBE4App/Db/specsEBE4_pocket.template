@@ -1,15 +1,110 @@
-record(ai, "$(Sys)$(Dev)I:Fil-RB")
+record(ai, "$(Sys){$(Name)-$(SubName)}I:Fil-RB")
 {
 	field(DTYP, "stream")
-	filed(INP,  "@specsEBE4.proto getParaFloat($(Filament)) $(PORT)")
+	field(INP,  "@specsEBE4.proto getParaFloat($(Filament)) $(PORT)")
+	field(SCAN, "$(SCAN)")
+	field(EGU,  "A")
+}
+
+record(ao, "$(Sys){$(Name)-$(SubName)}I:Fil-SP")
+{
+	field(DTYP, "stream")
+	field(OUT,  "@specsEBE4.proto setParaFloat($(Filament)) $(PORT)")
+	field(EGU,  "A")
+}
+
+record(ai, "$(Sys){$(Name)-$(SubName)}I:Emis-RB")
+{
+	field(DTYP, "stream")
+	field(INP,  "@specsEBE4.proto getParaFloat($(Emission)) $(PORT)")
+	field(SCAN, "$(SCAN)")
+	field(EGU,  "A")
+}
+
+record(ao, "$(Sys){$(Name)-$(SubName)}I:Emis-SP")
+{
+	field(DTYP, "stream")
+	field(OUT,  "@specsEBE4.proto setParaFloat($(Emission)) $(PORT)")
+	field(EGU,  "A")
+}
+
+record(ai, "$(Sys){$(Name)-$(SubName)}I:Fil-I")
+{
+	field(DTYP, "stream")
+	field(INP,  "@specsEBE4.proto getParaFloat($(Filament_I)) $(PORT)")
+	field(SCAN, "$(SCAN)")
+	field(EGU,  "A")
+}
+
+record(ai, "$(Sys){$(Name)-$(SubName)}I:Emis-I")
+{
+	field(DTYP, "stream")
+	field(INP,  "@specsEBE4.proto setParaFloat($(Emission)) $(PORT)")
+	field(SCAN, "$(SCAN)")
+	field(EGU,  "A")
+}
+
+record(ai, "$(Sys){$(Name)-$(SubName)}E:Max-RB")
+{
+	field(DTYP, "stream")
+	field(INP,  "@specsEBE4.proto getParaFloat($(Filament_Max)) $(PORT)")
 	field(SCAN, "$(SCAN)")
 	field(EGU,  "V")
 }
 
-record(ao, "$(Sys)$(Dev)I:Fil-SP")
+record(ao, "$(Sys){$(Name)-$(SubName)}E:Max-SP")
 {
 	field(DTYP, "stream")
-	filed(OUT,  "@specsEBE4.proto setParaFloat($(Filament)) $(PORT)")
+	field(OUT,  "@specsEBE4.proto setParaFloat($(Filament_Max)) $(PORT)")
 	field(EGU,  "V")
+}
+
+record(ai, "$(Sys){$(Name)-$(SubName)}Pwr:Max-RB")
+{
+	field(DTYP, "stream")
+	field(INP,  "@specsEBE4.proto getParaFloat($(Emission_Max)) $(PORT)")
+	field(SCAN, "$(SCAN)")
+	field(EGU,  "V")
+}
+
+record(ao, "$(Sys){$(Name)-$(SubName)}Pwr:Max-SP")
+{
+	field(DTYP, "stream")
+	field(OUT,  "@specsEBE4.proto setParaFloat($(Emission_Max)) $(PORT)")
+	field(EGU,  "V")
+}
+
+record(mbbi, "$(Sys){$(Name)-$(SubName)}Val:Reg-Sts")
+{
+	field(DTYP, "stream")
+	field(INP,  "@specsEBE4.proto getParaInt($(Fil_Reg_Type)) $(PORT)")
+	field(SCAN, "$(SCAN)")
+	field(ZRST, "Filament")
+	field(ONST, "Emission")
+	field(TWST, "Flux")
+}
+
+record(mbbo, "$(Sys){$(Name)-$(SubName)}Val:Reg-Sel")
+{
+	field(DTYP, "stream")
+	field(OUT,  "@specsEBE4.proto setParaInt($(Fil_Reg_Type)) $(PORT)")
+	field(ZRST, "Filament")
+	field(ONST, "Emission")
+	field(TWST, "Flux")
+}
+
+record(ai, "$(Sys){$(Name)-$(SubName)}I:Sby-RB")
+{
+	field(DTYP, "stream")
+	field(INP,  "@specsEBE4.proto getParaFloat($(Filament_Standby)) $(PORT)")
+	field(SCAN, "$(SCAN)")
+	field(EGU,  "A")
+}
+
+record(ao, "$(Sys){$(Name)-$(SubName)}I:Sby-SP")
+{
+	field(DTYP, "stream")
+	field(OUT,  "@specsEBE4.proto setParaFloat($(Filament_Standby)) $(PORT)")
+	field(EGU,  "A")
 }
 

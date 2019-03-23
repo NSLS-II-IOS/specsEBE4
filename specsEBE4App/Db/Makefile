@@ -11,6 +11,8 @@ include $(TOP)/configure/CONFIG
 # Create and install (or just install) into <top>/db
 # databases, templates, substitutions like this
 DB += specsEBE4.db
+#DB += specsEBE4_pocket.template
+#DB += specsEBE4.substitutions
 #DB += specsEBE4_chan.db
 #DB += specsEBE4.template
 

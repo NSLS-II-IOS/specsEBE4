@@ -1,9 +1,10 @@
-file specsEBE4.template
+file specsEBE4_single.template
 {
-	{Dev="{$(Name)}"}
+	{SCAN="1 second"}
 }
 
 file specsEBE4_pocket.template
 {
-	{Dev="{$(Name)-Pkt:1}",Filament=24}
+	{SubName="Pkt:1",SCAN="1 second",Filament="24",Emission=25,Filament_I=26,Emission_I=30,
+	 Filament_Max=31, Emission_Max=32, Fil_Reg_Type=34, Filament_Standby=35}
 }
