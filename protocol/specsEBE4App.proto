@@ -1,0 +1,33 @@
+Terminator = CR;
+
+getString
+{
+	out "?0001 \$1";
+	in "!0001 \$1 OK: %s";
+}
+
+setRemote
+{
+	out "?0002 SetRemoteMode \$1";
+	in "!0002 SetRemoteMode OK";
+}
+
+setParaInt {
+  out "?1010 SetParaValue \$1 %d";
+  in  "!1010 SetParaValue OK:";
+}
+
+getParaInt {
+	out "?0101 GetParaValue \$1";
+	in  "?0101 GetParaValue OK: %d";
+}
+
+setParaFloat {
+  out "?2010 SetParaValue \$1 %f";
+  in  "!2010 SetParaValue OK:";
+}
+
+getParaFloat {
+	out "?2101 GetParaValue \$1";
+	in  "?2101 GetParaValue OK: %f";
+}

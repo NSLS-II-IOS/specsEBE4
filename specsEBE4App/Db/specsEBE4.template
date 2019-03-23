@@ -1,0 +1,138 @@
+record(stringin, "$(Sys)$(Dev)Val:Name-I")
+{
+	field(DTYP, "stream")
+	field(INP,  "@specsEBE4.proto getString(GetDeviceName) $(PORT)")
+	field(PINI, "YES")
+}
+
+record(stringin, "$(Sys)$(Dev)Val:Type-I")
+{
+	field(DTYP, "stream")
+	field(INP,  "@specsEBE4.proto getString(GetDeviceType) $(PORT)")
+	field(PINI, "YES")
+}
+
+record(stringin, "$(Sys)$(Dev)Ver-I")
+{
+	field(DTYP, "stream")
+	field(INP,  "@specsEBE4.proto getString(GetFirmwareVersion) $(PORT)")
+	field(PINI, "YES")
+}
+
+record(bi, "$(Sys)$(Dev)Trip:Water-I")
+{
+	field(DTYP, "stream")
+	filed(INP,  "@specsEBE4.proto getParaInt(13) $(PORT)")
+	field(SCAN, "$(SCAN)")
+	field(ZNAM, "Tripped")
+	field(ONAM, "Safe")
+}
+
+record(bi, "$(Sys)$(Dev)Trip:IL2-I")
+{
+	field(DTYP, "stream")
+	filed(INP,  "@specsEBE4.proto getParaInt(14) $(PORT)")
+	field(SCAN, "$(SCAN)")
+	field(ZNAM, "Tripped")
+	field(ONAM, "Safe")
+}
+
+record(bi, "$(Sys)$(Dev)Trip:Vac-I")
+{
+	field(DTYP, "stream")
+	filed(INP,  "@specsEBE4.proto getParaInt(15) $(PORT)")
+	field(SCAN, "$(SCAN)")
+	field(ZNAM, "Tripped")
+	field(ONAM, "Safe")
+}
+
+record(mbbi, "$(Sys)$(Dev)Sh-Sts")
+{
+	field(DTYP, "stream")
+	filed(INP,  "@specsEBE4.proto getParaInt(128) $(PORT)")
+	field(SCAN, "$(SCAN)")
+	field(ZRST, "124_OPEN")
+	field(ONST, "CLOSED")
+	field(TWST, "23_OPEN")
+	field(THST, "123_OPEN")
+	field(FRST, "ALL_OPEN")
+	#field(ZRST, "23_OPEN")
+	#field(ONST, "14_OPEN")
+}
+
+record(mbbo, "$(Sys)$(Dev)Sh-Sel")
+{
+	field(DTYP, "stream")
+	filed(OUT,  "@specsEBE4.proto setParaInt(128) $(PORT)")
+	field(ZRST, "124_OPEN")
+	field(ONST, "CLOSED")
+	field(TWST, "23_OPEN")
+	field(THST, "123_OPEN")
+	field(FRST, "ALL_OPEN")
+	#field(ZRST, "23_OPEN")
+	#field(ONST, "14_OPEN")
+}
+
+record(ai, "$(Sys)$(Dev)E:HV-RB")
+{
+	field(DTYP, "stream")
+	filed(INP,  "@specsEBE4.proto getParaFloat(17) $(PORT)")
+	field(SCAN, "$(SCAN)")
+	field(EGU,  "V")
+}
+
+record(ao, "$(Sys)$(Dev)E:HV-SP")
+{
+	field(DTYP, "stream")
+	filed(OUT,  "@specsEBE4.proto setParaFloat(17) $(PORT)")
+	field(EGU,  "V")
+}
+
+record(ai, "$(Sys)$(Dev)E:HV-I")
+{
+	field(DTYP, "stream")
+	filed(INP,  "@specsEBE4.proto setParaFloat(19) $(PORT)")
+	field(EGU,  "V")
+	field(SCAN, "$(SCAN)")
+}
+
+record(ai, "$(Sys)$(Dev)E:Max-RB")
+{
+	field(DTYP, "stream")
+	filed(INP,  "@specsEBE4.proto getParaFloat(21) $(PORT)")
+	field(SCAN, "$(SCAN)")
+	field(EGU,  "V")
+}
+
+record(ao, "$(Sys)$(Dev)E:Max-SP")
+{
+	field(DTYP, "stream")
+	filed(OUT,  "@specsEBE4.proto setParaFloat(21) $(PORT)")
+	field(EGU,  "V")
+}
+
+record(ai, "$(Sys)$(Dev)I:HV-I")
+{
+	field(DTYP, "stream")
+	filed(INP,  "@specsEBE4.proto getParaFloat(18) $(PORT)")
+	field(EGU,  "V")
+	field(SCAN, "$(SCAN)")
+}
+
+record(bi, "$(Sys)$(Dev)E:Enbl-Sts")
+{
+	field(DTYP, "stream")
+	filed(INP,  "@specsEBE4.proto getParaInt(23) $(PORT)")
+	field(SCAN, "$(SCAN)")
+	field(ZNAM, "Off")
+	field(ONAM, "On")
+}
+
+record(bo, "$(Sys)$(Dev)E:Enbl-Sel")
+{
+	field(DTYP, "stream")
+	filed(OUT,  "@specsEBE4.proto setParaInt(23) $(PORT)")
+	field(ZNAM, "Off")
+	field(ONAM, "On")
+}
+

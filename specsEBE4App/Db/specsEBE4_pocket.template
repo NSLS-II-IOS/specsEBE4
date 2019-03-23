@@ -1,0 +1,15 @@
+record(ai, "$(Sys)$(Dev)I:Fil-RB")
+{
+	field(DTYP, "stream")
+	filed(INP,  "@specsEBE4.proto getParaFloat($(Filament)) $(PORT)")
+	field(SCAN, "$(SCAN)")
+	field(EGU,  "V")
+}
+
+record(ao, "$(Sys)$(Dev)I:Fil-SP")
+{
+	field(DTYP, "stream")
+	filed(OUT,  "@specsEBE4.proto setParaFloat($(Filament)) $(PORT)")
+	field(EGU,  "V")
+}
+

@@ -1,0 +1,9 @@
+file specsEBE4.template
+{
+	{Dev="{$(Name)}"}
+}
+
+file specsEBE4_pocket.template
+{
+	{Dev="{$(Name)-Pkt:1}",Filament=24}
+}
