@@ -12,7 +12,7 @@ epicsEnvSet("EPICS_CA_AUTO_ADDR_LIST" , "NO")
 epicsEnvSet("EPICS_CA_ADDR_LIST"      , "10.23.0.255")
 epicsEnvSet("STREAM_PROTOCOL_PATH"    , "$(TOP)/protocol")
 
-drvAsynIPPortConfigure("EBE4", "10.23.3.220:7777")
+drvAsynIPPortConfigure("EBE4", "10.23.3.70:2005 UDP")
 #asynSetTraceMask("EBE4", 0, 0x9)
 #asynSetTraceIOMask("EBE4", 0, 0x2)
 

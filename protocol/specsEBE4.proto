@@ -1,4 +1,4 @@
-Terminator = CR;
+Terminator = LF;
 
 getString
 {
@@ -8,7 +8,7 @@ getString
 
 setRemote
 {
-	out "?0002 SetRemoteMode \$1";
+	out "?0002 SetRemoteMode %d";
 	in "!0002 SetRemoteMode OK";
 }
 
@@ -19,15 +19,34 @@ setParaInt {
 
 getParaInt {
 	out "?0101 GetParaValue \$1";
-	in  "?0101 GetParaValue OK: %d";
+	in  "!0101 GetParaValue OK: %d";
 }
 
 setParaFloat {
-  out "?2010 SetParaValue \$1 %f";
+  out "?2010 SetParaValue \$1 %e";
   in  "!2010 SetParaValue OK:";
 }
 
 getParaFloat {
 	out "?2101 GetParaValue \$1";
-	in  "?2101 GetParaValue OK: %f";
+	in  "!2101 GetParaValue OK: %e";
+}
+
+getUnits {
+	out "?3101 GetParaUnit %(\$1)d";
+	in "!3101 GetParaUnit OK: %s";
+}
+
+getType {
+	out "?3101 GetParaType %(\$1)d";
+	in "!3101 GetParaType OK: %d";
+}
+
+getLimits1 {
+	out "?4101 GetParaLimits %(\$1)d";
+	in "!4101 GetParaLimits OK: %f,%*f";
+}
+
+getLimits2 {
+	in "!4101 GetParaLimits OK: %*f,%f";
 }

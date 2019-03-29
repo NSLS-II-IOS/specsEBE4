@@ -1,0 +1,53 @@
+# vim: set syntax=epicsDb :
+
+## 
+## Debug fields
+##
+
+record(longout, "$(Sys){$(Name)}Val:Units-SP")
+{
+	field(FLNK, "$(Sys){$(Name)}Val:Units-RB")
+}
+
+record(stringin, "$(Sys){$(Name)}Val:Units-RB")
+{
+	field(DTYP, "stream")
+	field(INP,  "@specsEBE4.proto getUnits($(Sys){$(Name)}Val:Units-SP) $(PORT)")
+}
+
+record(longout, "$(Sys){$(Name)}Val:Type-SP")
+{
+	field(FLNK, "$(Sys){$(Name)}Val:Type-RB")
+}
+
+
+record(mbbi, "$(Sys){$(Name)}Val:Type-RB")
+{
+	field(DTYP, "stream")
+	field(INP,  "@specsEBE4.proto getType($(Sys){$(Name)}Val:Type-SP) $(PORT)")
+	field(ZRST, "FLOAT")
+	field(ONST, "INT")
+	field(TWST, "STRING")
+	field(NOBT, "3")
+	field(ZRVL, "1")
+	field(ONVL, "2")
+	field(TWVL, "4")
+}
+
+record(longout, "$(Sys){$(Name)}Val:Limit-SP")
+{
+	field(FLNK, "$(Sys){$(Name)}Val:LimitH-RB")
+}
+
+record(ai, "$(Sys){$(Name)}Val:LimitH-RB")
+{
+	field(DTYP, "stream")
+	field(INP,  "@specsEBE4.proto getLimits1($(Sys){$(Name)}Val:Limit-SP) $(PORT)")
+}
+
+record(ai, "$(Sys){$(Name)}Val:LimitL-RB")
+{
+	field(DTYP, "stream")
+	field(INP,  "@specsEBE4.proto getLimits2 $(PORT)")
+	field(SCAN, "I/O Intr")
+}

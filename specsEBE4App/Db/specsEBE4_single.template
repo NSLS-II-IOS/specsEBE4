@@ -1,3 +1,5 @@
+# vim: set syntax=epicsDb :
+
 record(stringin, "$(Sys){$(Name)}Val:Name-I")
 {
 	field(DTYP, "stream")
@@ -56,8 +58,6 @@ record(mbbi, "$(Sys){$(Name)}Sh-Sts")
 	field(TWST, "23_OPEN")
 	field(THST, "123_OPEN")
 	field(FRST, "ALL_OPEN")
-	#field(ZRST, "23_OPEN")
-	#field(ONST, "14_OPEN")
 }
 
 record(mbbo, "$(Sys){$(Name)}Sh-Sel")
@@ -69,8 +69,7 @@ record(mbbo, "$(Sys){$(Name)}Sh-Sel")
 	field(TWST, "23_OPEN")
 	field(THST, "123_OPEN")
 	field(FRST, "ALL_OPEN")
-	#field(ZRST, "23_OPEN")
-	#field(ONST, "14_OPEN")
+	field(FLNK, "$(Sys){$(Name)}Sh-Sts")
 }
 
 record(ai, "$(Sys){$(Name)}E:HV-RB")
@@ -86,12 +85,13 @@ record(ao, "$(Sys){$(Name)}E:HV-SP")
 	field(DTYP, "stream")
 	field(OUT,  "@specsEBE4.proto setParaFloat(17) $(PORT)")
 	field(EGU,  "V")
+	field(FLNK, "$(Sys){$(Name)}E:HV-RB")
 }
 
 record(ai, "$(Sys){$(Name)}E:HV-I")
 {
 	field(DTYP, "stream")
-	field(INP,  "@specsEBE4.proto setParaFloat(19) $(PORT)")
+	field(INP,  "@specsEBE4.proto getParaFloat(19) $(PORT)")
 	field(EGU,  "V")
 	field(SCAN, "$(SCAN)")
 }
@@ -109,13 +109,14 @@ record(ao, "$(Sys){$(Name)}E:Max-SP")
 	field(DTYP, "stream")
 	field(OUT,  "@specsEBE4.proto setParaFloat(21) $(PORT)")
 	field(EGU,  "V")
+	field(FLNK, "$(Sys){$(Name)}E:Max-RB")
 }
 
 record(ai, "$(Sys){$(Name)}I:HV-I")
 {
 	field(DTYP, "stream")
 	field(INP,  "@specsEBE4.proto getParaFloat(18) $(PORT)")
-	field(EGU,  "V")
+	field(EGU,  "A")
 	field(SCAN, "$(SCAN)")
 }
 
@@ -134,5 +135,15 @@ record(bo, "$(Sys){$(Name)}E:Enbl-Sel")
 	field(OUT,  "@specsEBE4.proto setParaInt(23) $(PORT)")
 	field(ZNAM, "Off")
 	field(ONAM, "On")
+	field(FLNK, "$(Sys){$(Name)}E:Enbl-Sts")
 }
 
+record(bo, "$(Sys){$(Name)}Mode:Rmt-Sel")
+{
+	field(DTYP, "stream")
+	field(OUT,  "@specsEBE4.proto setRemote $(PORT)")
+	field(ZNAM, "LOCAL")
+	field(ONAM, "REMOTE")
+	field(PINI, "YES")
+	field(VAL,  "1")
+}
