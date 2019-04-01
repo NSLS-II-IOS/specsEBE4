@@ -236,7 +236,7 @@ record(ao, "$(Sys){$(Name)-$(SubName)}Flux:Max-SP")
 	field(FLNK, "$(Sys){$(Name)-$(SubName)}Flux:Max-RB")
 }
 
-record(mbbi, "$(Sys){$(Name)-$(SubName)}Val:Reg-Sts")
+record(mbbi, "$(Sys){$(Name)-$(SubName)}Val:FluxReg-Sts")
 {
 	field(DTYP, "stream")
 	field(INP,  "@specsEBE4.proto getParaInt($(Flux_Reg_Stat)) $(PORT)")
@@ -246,14 +246,14 @@ record(mbbi, "$(Sys){$(Name)-$(SubName)}Val:Reg-Sts")
 	field(TWST, "Regulating")
 }
 
-record(mbbo, "$(Sys){$(Name)-$(SubName)}Val:Reg-Sel")
+record(mbbo, "$(Sys){$(Name)-$(SubName)}Val:FluxReg-Sel")
 {
 	field(DTYP, "stream")
 	field(OUT,  "@specsEBE4.proto setParaInt($(Flux_Reg_Stat)) $(PORT)")
 	field(ZRST, "Not_In_Use")
 	field(ONST, "In_Progress")
 	field(TWST, "Regulating")
-	field(FLNK, "$(Sys){$(Name)-$(SubName)}Val:Reg-Sts")
+	field(FLNK, "$(Sys){$(Name)-$(SubName)}Val:FluxReg-Sts")
 }
 
 record(ai, "$(Sys){$(Name)-$(SubName)}Flux:CtrlP-RB")
