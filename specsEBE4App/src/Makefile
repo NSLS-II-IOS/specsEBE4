@@ -16,21 +16,17 @@ DBD += specsEBE4.dbd
 specsEBE4_DBD += base.dbd
 
 # Include dbd files from all support applications:
-specsEBE4_DBD += caPutLog.dbd
 specsEBE4_DBD += asyn.dbd
 specsEBE4_DBD += stream.dbd
 specsEBE4_DBD += drvAsynIPPort.dbd
 specsEBE4_DBD += drvAsynSerialPort.dbd
 specsEBE4_DBD += system.dbd
-specsEBE4_DBD += asSupport.dbd
 specsEBE4_DBD += devIocStats.dbd
 
 # Add all the support libraries needed by this IOC
-specsEBE4_LIBS += caPutLog
 specsEBE4_LIBS += stream
 specsEBE4_LIBS += asyn
 specsEBE4_LIBS += devIocStats
-specsEBE4_LIBS += autosave
 
 # specsEBE4_registerRecordDeviceDriver.cpp derives from specsEBE4.dbd
 specsEBE4_SRCS += specsEBE4_registerRecordDeviceDriver.cpp

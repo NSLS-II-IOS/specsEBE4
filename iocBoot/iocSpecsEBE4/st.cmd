@@ -19,20 +19,7 @@ drvAsynIPPortConfigure("EBE4", "10.23.3.70:2005 UDP")
 ## Load record instances
 dbLoadRecords("$(TOP)/db/specsEBE4.db", "Sys=XF:23ID2-ES,Name=Evap:1,PORT=EBE4")
 
-system("install -m 777 -d $(TOP)/as/save") 
-system("install -m 777 -d $(TOP)/as/req")
-
-set_savefile_path("${TOP}/as","/save")
-set_requestfile_path("${TOP}/as","/req")
-set_pass0_restoreFile("info_positions.sav")
-set_pass1_restoreFile("info_settings.sav")
-
 iocInit()
-
-cd ${TOP}/as/req
-makeAutosaveFiles()
-create_monitor_set("info_positions.req", 5 , "")
-create_monitor_set("info_settings.req", 15 , "")
 
 dbl > ${TOP}/records.dbl
 system("cp ${TOP}/records.dbl /cf-update/xf23id2-ioc1.es-specsEBE4.dbl")
