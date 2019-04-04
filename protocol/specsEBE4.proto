@@ -14,7 +14,7 @@ setRemote
 
 setParaInt {
   out "?1010 SetParaValue \$1 %d";
-  in  "!1010 SetParaValue OK:";
+  in  "!1010 SetParaValue OK";
 }
 
 getParaInt {
@@ -24,7 +24,7 @@ getParaInt {
 
 setParaFloat {
   out "?2010 SetParaValue \$1 %e";
-  in  "!2010 SetParaValue OK:";
+  in  "!2010 SetParaValue OK";
 }
 
 getParaFloat {
