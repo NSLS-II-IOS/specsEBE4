@@ -22,7 +22,7 @@ record(ai, "$(Sys){$(Name)-$(SubName)}I:Emis-RB")
 	field(INP,  "@specsEBE4.proto getParaFloat($(Emission)) $(PORT)")
 	field(SCAN, "$(SCAN)")
 	field(EGU,  "mA")
-	field(ASLO, "0.001")
+	field(ASLO, "1000")
 	field(AOFF, "0")
 }
 
@@ -50,7 +50,7 @@ record(ai, "$(Sys){$(Name)-$(SubName)}I:Emis-I")
 	field(INP,  "@specsEBE4.proto getParaFloat($(Emission_I)) $(PORT)")
 	field(SCAN, "$(SCAN)")
 	field(EGU,  "mA")
-	field(ASLO, "0.001")
+	field(ASLO, "1000")
 	field(AOFF, "0")
 }
 
@@ -210,7 +210,7 @@ record(ai, "$(Sys){$(Name)-$(SubName)}Flux-RB")
 	field(INP,  "@specsEBE4.proto getParaFloat($(Flux)) $(PORT)")
 	field(SCAN, "$(SCAN)")
 	field(EGU,  "nA")
-	field(ASLO, "0.000000001")
+	field(ASLO, "1000000000")
 	field(AOFF, "0")
 }
 
@@ -230,7 +230,7 @@ record(ai, "$(Sys){$(Name)-$(SubName)}Flux-I")
 	field(INP,  "@specsEBE4.proto getParaFloat($(Flux_RB)) $(PORT)")
 	field(SCAN, "$(SCAN)")
 	field(EGU,  "nA")
-	field(ASLO, "0.000000001")
+	field(ASLO, "1000000000")
 	field(AOFF, "0")
 }
 
@@ -240,7 +240,7 @@ record(ai, "$(Sys){$(Name)-$(SubName)}Flux:Max-RB")
 	field(INP,  "@specsEBE4.proto getParaFloat($(Flux_Max)) $(PORT)")
 	field(SCAN, "$(SCAN)")
 	field(EGU,  "nA")
-	field(ASLO, "0.000000001")
+	field(ASLO, "1000000000")
 	field(AOFF, "0")
 }
 

@@ -13,31 +13,31 @@ file specsEBE4_debug.template
 file specsEBE4_pocket.template
 {
 	{
-	    SubName="Pkt:1",SCAN="1 second",Filament=24,Emission=25,Filament_I=26,Emission_I=30,
+	    SubName="Pkt:1",SCAN="1 second",Filament=24,Emission=30,Filament_I=26,Emission_I=25,
 	    Filament_Max=31, Emission_Pmax=32, Fil_Reg_Type=34, Filament_Standby=35, Emission_Max=36,
-	    EMC_Reg_Stat=38, Emission_PVal=39, Emission_IVal=40, Emission_Time_Base=41, Flux=43, 
-	    Flux_RB=44, Flux_Max=45, Flux_Reg_Stat=46, Flux_Control_P=47, Flux_Control_I=48,
+	    EMC_Reg_Stat=38, Emission_PVal=39, Emission_IVal=40, Emission_Time_Base=41, Flux=44, 
+	    Flux_RB=43, Flux_Max=45, Flux_Reg_Stat=46, Flux_Control_P=47, Flux_Control_I=48,
 		Flux_Time_Base=49
 	}
 	{
-	    SubName="Pkt:2",SCAN="1 second",Filament=50,Emission=51,Filament_I=52,Emission_I=56,
+	    SubName="Pkt:2",SCAN="1 second",Filament=50,Emission=56,Filament_I=52,Emission_I=51,
 	    Filament_Max=57, Emission_Pmax=58, Fil_Reg_Type=60, Filament_Standby=61, Emission_Max=62,
-	    EMC_Reg_Stat=64, Emission_PVal=65, Emission_IVal=66, Emission_Time_Base=67, Flux=69, 
-	    Flux_RB=70, Flux_Max=71, Flux_Reg_Stat=72, Flux_Control_P=73, Flux_Control_I=74,
+	    EMC_Reg_Stat=64, Emission_PVal=65, Emission_IVal=66, Emission_Time_Base=67, Flux=70, 
+	    Flux_RB=69, Flux_Max=71, Flux_Reg_Stat=72, Flux_Control_P=73, Flux_Control_I=74,
 		Flux_Time_Base=75
 	}
 	{
-	    SubName="Pkt:3",SCAN="1 second",Filament=76,Emission=77,Filament_I=78,Emission_I=82,
+	    SubName="Pkt:3",SCAN="1 second",Filament=76,Emission=82,Filament_I=78,Emission_I=77,
 	    Filament_Max=83, Emission_Pmax=84, Fil_Reg_Type=86, Filament_Standby=87, Emission_Max=88,
-	    EMC_Reg_Stat=90, Emission_PVal=91, Emission_IVal=92, Emission_Time_Base=93, Flux=95, 
-	    Flux_RB=96, Flux_Max=97, Flux_Reg_Stat=98, Flux_Control_P=99, Flux_Control_I=100,
+	    EMC_Reg_Stat=90, Emission_PVal=91, Emission_IVal=92, Emission_Time_Base=93, Flux=96, 
+	    Flux_RB=95, Flux_Max=97, Flux_Reg_Stat=98, Flux_Control_P=99, Flux_Control_I=100,
 		Flux_Time_Base=101
 	}
 	{
-	    SubName="Pkt:4",SCAN="1 second",Filament=102,Emission=103,Filament_I=104,Emission_I=108,
+	    SubName="Pkt:4",SCAN="1 second",Filament=102,Emission=108,Filament_I=104,Emission_I=103,
 	    Filament_Max=109, Emission_Pmax=110, Fil_Reg_Type=112, Filament_Standby=113, Emission_Max=114,
-	    EMC_Reg_Stat=116, Emission_PVal=117, Emission_IVal=118, Emission_Time_Base=119, Flux=121, 
-	    Flux_RB=122, Flux_Max=123, Flux_Reg_Stat=124, Flux_Control_P=125, Flux_Control_I=126,
+	    EMC_Reg_Stat=116, Emission_PVal=117, Emission_IVal=118, Emission_Time_Base=119, Flux=122, 
+	    Flux_RB=121, Flux_Max=123, Flux_Reg_Stat=124, Flux_Control_P=125, Flux_Control_I=126,
 		Flux_Time_Base=127
 	}
 }
